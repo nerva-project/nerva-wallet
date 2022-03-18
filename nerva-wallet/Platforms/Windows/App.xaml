@@ -1,8 +1,0 @@
-﻿<maui:MauiWinUIApplication
-    x:Class="nerva_wallet.WinUI.App"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:maui="using:Microsoft.Maui"
-    xmlns:local="using:nerva_wallet.WinUI">
-
-</maui:MauiWinUIApplication>
