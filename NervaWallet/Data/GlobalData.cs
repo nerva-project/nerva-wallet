@@ -4,6 +4,7 @@
     {
         public static string AppName = "NervaWallet";
         public static string AppDataPath;
+        public static string AppLogFile;
 
     }
 }

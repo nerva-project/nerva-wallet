@@ -1,4 +1,4 @@
-﻿using NervaWallet.Data;
+﻿using NervaWallet.Services;
 
 namespace NervaWallet;
 
@@ -6,8 +6,13 @@ public partial class MainPage : ContentPage
 {
 	public MainPage()
 	{
-		InitializeComponent();
-
-		GlobalMethods.CreateAppDataPathIfMissing();
+        try
+        {
+            InitializeComponent();
+        }
+        catch (Exception ex)
+        {
+            ErrorHandler.HandleException(ex, "MP.CONST", false);
+        }
 	}
 }
