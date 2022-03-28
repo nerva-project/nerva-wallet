@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NervaWallet.Data
+﻿namespace NervaWallet.Data
 {
-    internal class GlobalData
+    public static class GlobalData
     {
+        public static string AppName = "NervaWallet";
+        public static string AppDataPath;
+
     }
 }
