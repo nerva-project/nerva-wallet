@@ -44,8 +44,7 @@ namespace NervaWallet.Pages
                     using(var streamReader = new StreamReader(stream))
                     {
                         App.Current.MainPage.DisplayAlert("File Content", streamReader.ReadToEnd(), "OK");
-                    }
-                    
+                    }                    
                 }
                 
 
@@ -55,8 +54,7 @@ namespace NervaWallet.Pages
             }
             catch (Exception ex)
             {
-                // TODO: Add exception handling
-                throw;
+                ErrorHandler.HandleException(ex, "SET.DBF", true);
             }            
         }
     }
