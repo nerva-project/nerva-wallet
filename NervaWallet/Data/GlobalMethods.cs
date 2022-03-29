@@ -8,23 +8,33 @@ namespace NervaWallet.Data
         {
             try
             {
-                // Get application data path directory
+                // TODO: LocalApplicationDate does not currently work in MAUI. Need to revisit this. For now use AppDataDirectory
+
+                // Set/create application data directory
                 if (string.IsNullOrEmpty(GlobalData.AppDataPath))
                 {
                     GlobalData.AppDataPath = FileSystem.AppDataDirectory;
 
-
                     //GlobalData.AppDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), GlobalData.AppName);
-
-                    // TODO: LocalApplicationDate does not currently work.  For now use above
+                    
                     //GlobalData.AppDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), GlobalData.AppName);
                 }
 
-
-                // Create dir if it doesn't exist
                 if (!Directory.Exists(GlobalData.AppDataPath))
                 {
                     DirectoryInfo dir = Directory.CreateDirectory(GlobalData.AppDataPath);
+                }
+
+
+                // Set/create wallet directory
+                if (string.IsNullOrEmpty(GlobalData.AppWalletsPath))
+                {
+                    GlobalData.AppWalletsPath = Path.Combine(GlobalData.AppDataPath, "Wallets");
+                }
+
+                if (!Directory.Exists(GlobalData.AppWalletsPath))
+                {
+                    DirectoryInfo dir = Directory.CreateDirectory(GlobalData.AppWalletsPath);
                 }
 
 
