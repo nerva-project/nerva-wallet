@@ -41,12 +41,12 @@ namespace NervaWallet.Data
                 // Set up log file
                 if (string.IsNullOrEmpty(GlobalData.AppLogFile))
                 {
-                    GlobalData.AppLogFile = Path.Combine(GlobalData.AppDataPath, "NervaWallet.log");
+                    GlobalData.AppLogFile = Path.Combine(GlobalData.AppDataPath, GlobalData.AppName + ".log");
 
                     // If file already exists when application starts, copy it to old and delete original one
                     if(File.Exists(GlobalData.AppLogFile))
                     {
-                        string destinationFile = Path.Combine(GlobalData.AppDataPath, "NervaWallet_old.log");
+                        string destinationFile = Path.Combine(GlobalData.AppDataPath, GlobalData.AppName + "_old.log");
                         File.Copy(GlobalData.AppLogFile, destinationFile, true);
 
                         File.Delete(GlobalData.AppLogFile);
